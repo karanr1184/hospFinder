@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import Login from "./Login";
+import Signup from "./Signup";
 import Btn from "./Btn";
 
 import "../assets/Body.css";
@@ -25,7 +26,7 @@ function Body() {
 			<h1 className="title">{login ? "Login Form" : "Signup Form"}</h1>
 			<Btn handleClick={handleLogin} type={login} name="Login"></Btn>
 			<Btn handleClick={handleSignup} type={signUp} name="Signup"></Btn>
-			<Login type={login ? "Login" : "Signup"}/>
+			{login ? <Login /> : <Signup />}
 		</div>
 	);
 }
