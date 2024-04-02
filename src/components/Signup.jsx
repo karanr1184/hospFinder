@@ -15,7 +15,7 @@ function Signup(props) {
   function handleChange(e) {
     let name = e.target.name;
     let value = e.target.value;
- 
+
     setUser({
       ...user,
       [name]: value
@@ -37,10 +37,10 @@ function Signup(props) {
           if (!response.ok) {
             alert("User already registered! Please Login.");
           }
-		  else{
-			alert("Registration Successful. Please Login.")
-		  }
-		  window.location.reload();
+          else {
+            alert("Registration Successful. Please Login.")
+          }
+          window.location.reload();
         } catch (error) {
           console.error("Registration error:", error);
         }
@@ -50,6 +50,10 @@ function Signup(props) {
     } else {
       alert("Please enter the email, password, and confirm password.");
     }
+  };
+
+  const handleRegisterHospital = () => {
+    window.open("/myForm", "_blank"); 
   };
 
   return (
@@ -98,13 +102,8 @@ function Signup(props) {
         <br />
         {props.type === "Login" && <br />}
         <div className="signup-link">
-          Are you hospital?{" "}
-          <a
-            href="https://docs.google.com/forms/d/1FfCFcYX4fQpNAwHcKCmGDA7ckqhik3Q4xVhaYYwiEtw/edit"
-            // target="_blank"
-          >
-            Register Now
-          </a>
+          Are you a hospital?{" "}
+          <button onClick={handleRegisterHospital}>Register Now</button>
         </div>
       </form>
     </div>
