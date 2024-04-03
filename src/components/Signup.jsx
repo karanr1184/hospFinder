@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../assets/registerStyle.css";
-import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import MyForm from "./MyForm";
 
 function Signup(props) {
-  const navigate = useNavigate(); // useHistory is now useNavigate()
 
   const [user, setUser] = useState({
     'email': "",
@@ -52,9 +52,7 @@ function Signup(props) {
     }
   };
 
-  const handleRegisterHospital = () => {
-    window.open("/myForm", "_blank"); 
-  };
+  
 
   return (
     <div className="form-inner">
@@ -103,7 +101,7 @@ function Signup(props) {
         {props.type === "Login" && <br />}
         <div className="signup-link">
           Are you a hospital?{" "}
-          <button onClick={handleRegisterHospital}>Register Now</button>
+          <Button variant="info" size="sm" href="/MyForm" target="_blank" style={{color:"#000080"}}>Register Now</Button>
         </div>
       </form>
     </div>

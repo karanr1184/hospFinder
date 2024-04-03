@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function MyForm() {
+  const navigate = useNavigate();
+
   const [hospitalData, setHospitalData] = useState({
     hospitalName: '',
     address: '',
@@ -32,21 +35,49 @@ function MyForm() {
 
   const handleDoctorCountChange = (e) => {
     const count = parseInt(e.target.value);
-    setHospitalData({
+    if(count >= 1 && count <= 10) {
+      setHospitalData({
       ...hospitalData,
       doctorsCount: count,
       doctors: Array(count).fill({ name: '', specialization: '' }) // Initialize array with empty doctor objects
     });
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission, e.g., send data to server
-    console.log('Form submitted:', hospitalData);
+    if(hospitalData.hospitalName && hospitalData.address && hospitalData.phoneNumber){
+      if(hospitalData.doctorsCount > 0){
+        try {
+          const response = await fetch(`http://localhost:3001/api/auth/hospitalReg`, {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              body: JSON.stringify(hospitalData),
+          });
+
+          if (response.ok) {
+              alert("Registration Successful!");
+              navigate("/");
+          } else {
+              alert("Hospital already registered!");
+          }
+      } catch (error) {
+          console.log(error);
+      }
+      }
+      else {
+        alert("There should be minimum 1 doctor.")
+      }
+    }
+    else 
+      alert("Please fill the data.")
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
+  return (<>
+    <form style={{color:"white"}} onSubmit={handleSubmit}>
       <label>
         Hospital Name:
         <input 
@@ -115,6 +146,7 @@ function MyForm() {
       <br />
       <button type="submit">Submit</button>
     </form>
+    </>
   );
 }
 

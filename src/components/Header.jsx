@@ -3,7 +3,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import 'bootstrap/dist/css/bootstrap.css';
 
-
 function Header() {
 	return (
 		<>
@@ -11,9 +10,9 @@ function Header() {
 				<Container>
 					<Navbar.Brand href="#home">HospFinder</Navbar.Brand>
 					<Nav className="mx-auto">
-						<Nav.Link href="#home">Home</Nav.Link>
+						<Nav.Link href="/home">Home</Nav.Link>
 						<Nav.Link href="#features">Features</Nav.Link>
-						<Nav.Link href="#pricing">About Us</Nav.Link>
+						<Nav.Link href="/about">About Us</Nav.Link>
 						<Nav.Link href="#pricing">Contact Us</Nav.Link>
 					</Nav>
 				</Container>

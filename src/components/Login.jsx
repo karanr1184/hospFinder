@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../assets/registerStyle.css";
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 function Login() {
     const navigate = useNavigate();
@@ -45,9 +46,6 @@ function Login() {
         }
     };
 
-    const handleRegisterHospital = () => {
-        window.open("/myForm", "_blank"); 
-    };
 
     return (
         <div className="form-inner">
@@ -81,7 +79,7 @@ function Login() {
                 <br />
                 <div className="signup-link">
                     Are you a hospital?{" "}
-                    <button onClick={handleRegisterHospital}>Register Now</button>
+                    <Button variant="info" size="sm" href="/MyForm" target="_blank" style={{color:"#000080"}}>Register Now</Button>
                 </div>
             </form>
         </div>
