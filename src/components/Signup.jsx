@@ -52,7 +52,6 @@ function Signup(props) {
     }
   };
 
-  
 
   return (
     <div className="form-inner">
@@ -101,7 +100,7 @@ function Signup(props) {
         {props.type === "Login" && <br />}
         <div className="signup-link">
           Are you a hospital?{" "}
-          <Button variant="info" size="sm" href="/MyForm" target="_blank" style={{color:"#000080"}}>Register Now</Button>
+          <Button variant="info" size="sm" href="/MyForm" target="_blank" style={{ color: "#000080" }}>Register Now</Button>
         </div>
       </form>
     </div>
