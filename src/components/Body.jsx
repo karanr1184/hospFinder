@@ -5,7 +5,6 @@ import Signup from "./Signup";
 import Btn from "./Btn";
 
 import "../assets/Body.css";
-import { type } from "@testing-library/user-event/dist/type";
 
 function Body() {
 	const [login, setLogin] = useState(true);

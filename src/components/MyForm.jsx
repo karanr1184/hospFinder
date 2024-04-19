@@ -41,7 +41,7 @@ function MyForm() {
       setHospitalData({
         ...hospitalData,
         doctorsCount: count,
-        doctors: Array(count).fill({ name: '', specialization: '' }) // Initialize array with empty doctor objects
+        doctors: Array(count).fill({ name: '', specialization: '', dnumber: '' }) // Initialize array with empty doctor objects
       });
     }
   };
@@ -91,7 +91,6 @@ function MyForm() {
             onChange={handleHospitalChange}
           />
         </label>
-        <br />
         <label>
           Address:
           <input
@@ -101,7 +100,6 @@ function MyForm() {
             onChange={handleHospitalChange}
           />
         </label>
-        <br />
         <label>
           Hospital Phone Number:
           <input
@@ -111,7 +109,6 @@ function MyForm() {
             onChange={handleHospitalChange}
           />
         </label>
-        <br />
         <label>
           Number of Doctors:
           <input
@@ -120,13 +117,14 @@ function MyForm() {
             value={hospitalData.doctorsCount}
             onChange={handleDoctorCountChange}
           />
+          
         </label>
-        <br />
         {hospitalData.doctors.map((doctor, index) => (
           <div key={index}>
-            <h3>Doctor {index + 1}</h3>
+            <h5 className='doc'>Doctor {index + 1}</h5>
             <label>
               Name:
+              <br />
               <input
                 type="text"
                 name="name"
@@ -134,7 +132,6 @@ function MyForm() {
                 onChange={(e) => handleDoctorChange(index, e)}
               />
             </label>
-            <br />
             <label>
               Specialization:
               <input
@@ -144,11 +141,20 @@ function MyForm() {
                 onChange={(e) => handleDoctorChange(index, e)}
               />
             </label>
-            <br />
+            <label>
+              Phone Number:
+              <input
+                type="tel"
+                name="dnumber"
+                value={doctor.dnumber}
+                onChange={(e) => handleDoctorChange(index, e)}
+              />
+            </label>
           </div>
         ))}
-        <br />
-        <button type="submit">Submit</button>
+        <div className='bt'>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );

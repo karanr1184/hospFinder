@@ -1,37 +1,56 @@
 .form-container {
-    width: 400px;
-    margin: auto;
-    padding: 20px;
-    background: -webkit-linear-gradient(left, #003366,#004080,#0059b3, #0073e6);
-    border-radius: 5px;
-  }
-  
-  .form-container label {
-    display: block;
-    margin-bottom: 10px;
-    color: white; 
-  }
-  
-  .form-container input[type="text"],
-  .form-container input[type="tel"],
-  .form-container input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .form-container button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .form-container button:hover {
-    background-color: #45a049;
-  }
-  
+  width: 45%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: rgb(243, 250, 248);
+  border-radius: 5px;
+}
+
+.form-container h1 {
+  background-color: #ff6200;
+  width: 80%;
+  text-align: center;
+  margin: 5px auto 40px;
+  border-radius: 17px;
+  padding: 5px;
+}
+
+.form-container label {
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.form-container input[type="text"],
+.form-container input[type="tel"],
+.form-container input[type="number"] {
+  width: 95%;
+  padding: 8px;
+  margin: 3px auto 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.form-container button {
+  background-color: #5fc163;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+.doc {
+  color: black;
+  margin: 15px 12px 5px;
+}
+
+.bt{
+  text-align: center;
+  margin-top: 20px;
+}

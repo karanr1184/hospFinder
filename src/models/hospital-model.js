@@ -26,6 +26,10 @@ const hospitalSchema = new mongoose.Schema({
           specialization: {
             type: String,
             required: true
+          },
+          dnumber: {
+            type: Number,
+            required: true
           }
         }
       ]

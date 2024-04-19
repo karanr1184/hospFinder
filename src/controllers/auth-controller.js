@@ -3,7 +3,7 @@ const Hospital = require("../models/hospital-model");
 
 const home = async (req, res) => {
 	try {
-		// res.status(200).send("Welcome to home page");
+		res.status(200).send("Welcome to home page");
 	} catch (error) {
 		res.status(500).json("internal server error");
 	}
@@ -66,4 +66,22 @@ const hospitalReg = async (req, res) => {
 	}
 };
 
-module.exports = { home, register, login, hospitalReg };
+const hospitalDetails = async (req, res) => {
+	try {
+		const {hospitalName}  = req.body;
+		const hospitalExist = await Hospital.findOne({ hospitalName });
+
+		if (hospitalExist) {
+			res.status(200).json({hosp: hospitalExist});
+		}	
+		else{
+			return res.status(400).json({ message: "Hospital not exist" });
+		}
+		
+	} catch (error) {
+		console.error("Error:", error);
+		res.status(500).json("internal server error");
+	}
+};
+
+module.exports = { home, register, login, hospitalReg, hospitalDetails };

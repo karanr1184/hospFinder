@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../assets/registerStyle.css";
 import Button from 'react-bootstrap/Button';
-import MyForm from "./MyForm";
 
 function Signup(props) {
 
