@@ -26,7 +26,7 @@ function Signup(props) {
     if (user.email && user.password) {
       if (user.password === cPassword) {
         try {
-          const response = await fetch(`http://localhost:3001/api/auth/register`, {
+          const response = await fetch(`https://hospfinder.onrender.com/api/auth/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
