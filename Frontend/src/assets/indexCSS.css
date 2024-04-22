@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+html{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: -webkit-linear-gradient(left, #003366,#004080,#0059b3, #0073e6);
+}
+
+#search{
+    margin: 100px auto 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+#searchTextField{
+    width: 76%;
+    padding: 7px;
+    font-size: 20px;
+    border: 2px solid blue;
+    border-radius: 20px;
+}
+
+#currLocBtn{
+    color: white;
+    background-color: #27ae60;
+    font-size: 18px;
+    padding: 8px;
+    border: 2px solid #27ae60;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+#currLocBtn:hover{
+    color: black;
+    background-color: #2ecc71;
+    border: 2px solid #27ae60;  
+}
+
+.map-div{
+    width: 90%;
+    height: 80%;
+    border: 4px solid black;
+    margin: 30px auto;
+    display : flex;
+}
+
+#map{
+    border-radius: 10px;
+    height: 500px; 
+    width: 70%; 
+    margin: 20px;   
+    border: 2px solid black;
+}
+
+#nearhosp{
+    width: 30%;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+
+#nhead{
+    margin: 5px auto;
+    text-align: center;
+    width: 80%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 9px;
+    background-color: #27ae60;  
+}
+
+#nhos{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+#photo{
+    margin: auto;
+    height: 280px;
+    width: 280px;
+}
+
+.mem{
+    margin-left: 13%;
+}
+
+.head{
+    color: #EEEEEE;
+    font-size: 50px;
+}
+
+#details{
+    color: #EEEEEE;
+    font-size: 15px;
+}
+
+#name{
+    color: #EEEEEE;
+    font-size: 30px;
+    margin: 20px auto;
+}
+
+.feat{
+    color: #EEEEEE;
+    font-size: 17px;
+}
+
+.indexbtn{
+    text-decoration: none;
+    color: white;
+    background-color: #27ae60;
+    font-size: 15px;
+    padding: 8px;
+    border: 2px solid #27ae60;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.indexbtn:hover{
+    color: black;
+    background-color: #2ecc71;
+    border: 2px solid #27ae60;  
+}
+
+#contact {
+    background-image: url(contact-bk.jpg);
+    background-size: cover;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+}
+
+#contact ul li {
+    padding: 3px 0;
+}
+
+#contact form {
+    color: #00FFAD;
+}
+
+#contact form input,
+#contact form textarea {
+    background: transparent;
+    border: 1px solid #00FFAD;
+    color: #ffffff;
+}   
