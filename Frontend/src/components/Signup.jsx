@@ -23,31 +23,40 @@ function Signup(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (user.email && user.password) {
-      if (user.password === cPassword) {
-        try {
-          const response = await fetch(`https://hospfinder.onrender.com/api/auth/register`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-          });
-          if (!response.ok) {
-            alert("User already registered! Please Login.");
-          }
-          else {
-            alert("Registration Successful. Please Login.")
-          }
-          window.location.reload();
-        } catch (error) {
-          console.error("Registration error:", error);
-        }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(user.email)) {
+      setErrorMessage("Invalid email format.");
+      return;
+    }
+
+    if (user.password.length < 8) {
+      setErrorMessage("Password must be at least 8 characters long.");
+      return;
+    }
+
+    if (user.password !== cPassword) {
+      setErrorMessage("Password and confirm password don't match.");
+      return;
+    }
+
+    // Submit the form
+    try {
+      const response = await fetch(`http://localhost:3001/api/auth/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      if (!response.ok) {
+        alert("User already registered! Please Login.");
       } else {
-        alert("Password and confirm password don't match.");
+        alert("Registration Successful. Please Login.")
       }
-    } else {
-      alert("Please enter the email, password, and confirm password.");
+      window.location.reload();
+    } catch (error) {
+      console.error("Registration error:", error);
     }
   };
 
