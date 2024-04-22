@@ -43,7 +43,7 @@ function Signup(props) {
 
     // Submit the form
     try {
-      const response = await fetch(`http://hospfinder.onrender.com/api/auth/register`, {
+      const response = await fetch(`http://localhost:3001/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ function Signup(props) {
   return (
     <div className="form-inner">
       <form className="login">
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
         <div className="field">
           <input
             type="email"
