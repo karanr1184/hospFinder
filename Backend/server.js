@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const router = require("./router/auth-router");
-const connectDB = require("./utils/mongo");
+const router = require("./src/router/auth-router");
+const connectDB = require("./src/utils/mongo");
 
 const corsOptions = {
     origin: "http://localhost:3000",
