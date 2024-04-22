@@ -10,6 +10,7 @@ function Signup(props) {
   });
 
   const [cPassword, setCPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleChange(e) {
     let name = e.target.name;
@@ -64,6 +65,7 @@ function Signup(props) {
   return (
     <div className="form-inner">
       <form className="login">
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
         <div className="field">
           <input
             type="email"
