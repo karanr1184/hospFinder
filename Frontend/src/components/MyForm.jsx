@@ -52,7 +52,7 @@ function MyForm() {
     if (hospitalData.hospitalName && hospitalData.address && hospitalData.phoneNumber) {
       if (hospitalData.doctorsCount > 0) {
         try {
-          const response = await fetch(`http://localhost:3001/api/auth/hospitalReg`, {
+          const response = await fetch(`https://hospfinder.onrender.com/api/auth/hospitalReg`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

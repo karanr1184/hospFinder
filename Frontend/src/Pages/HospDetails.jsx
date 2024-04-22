@@ -15,7 +15,7 @@ function HospDetails() {
 	const hospExist = async (req, res) => {
 		try {
 			const response = await fetch(
-				`http://localhost:3001/api/auth/hospitalDetails`,
+				`https://hospfinder.onrender.com/api/auth/hospitalDetails`,
 				{
 					method: "POST",
 					headers: {
