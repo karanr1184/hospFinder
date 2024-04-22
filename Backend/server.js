@@ -6,7 +6,7 @@ const router = require("./src/router/auth-router");
 const connectDB = require("./src/utils/mongo");
 
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: "https://hosp-finder.vercel.app/",
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 }
