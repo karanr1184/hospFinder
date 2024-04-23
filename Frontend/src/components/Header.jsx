@@ -9,10 +9,8 @@ import logo_1 from "../assets/logo_1.png";
 
 function Header() {
     const currentPath = window.location.pathname;
-    const [showLogout, setShowLogout] = useState(false);
 
     const handleLogout = () => {
-        setShowLogout(false);
         window.location.href = '/'; 
     };
 
@@ -30,7 +28,7 @@ function Header() {
                         <Nav.Link href="#contact" style={{color: 'white', fontSize: 18}}>Contact Us</Nav.Link>
                     </Nav>
 {/*                     <FaRegUserCircle size={35} onClick={() => setShowLogout(!showLogout)} style={{ cursor: 'pointer' }} /> */}
-                    {showLogout && <Button variant="light" onClick={handleLogout} style={{ marginLeft: '10px' }}>Logout</Button>}
+                    {currentPath !== '/' && <Button variant="light" onClick={handleLogout} style={{ marginLeft: '10px' }}>Logout</Button>}
                 </Container>
             </Navbar>
         </>
