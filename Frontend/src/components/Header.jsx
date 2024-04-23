@@ -29,7 +29,7 @@ function Header() {
                         <Nav.Link href="#about" style={{color: 'white', fontSize: 18}}>About Us</Nav.Link>
                         <Nav.Link href="#contact" style={{color: 'white', fontSize: 18}}>Contact Us</Nav.Link>
                     </Nav>
-                    <FaRegUserCircle size={35} onClick={() => setShowLogout(!showLogout)} style={{ cursor: 'pointer' }} />
+{/*                     <FaRegUserCircle size={35} onClick={() => setShowLogout(!showLogout)} style={{ cursor: 'pointer' }} /> */}
                     {showLogout && <Button variant="light" onClick={handleLogout} style={{ marginLeft: '10px' }}>Logout</Button>}
                 </Container>
             </Navbar>
